@@ -1,74 +1,63 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
 int main()
 {
 	int a, b;
-	int game = 1;
+	int game = 0;
 	int input = 0;
 	int ingame = 0;
-	while (game == 1)
+	while (game == 0)
 	{
 		system("cls");
-		printf("1. gamestart\n");
-		printf("2. exit\n");
+		printf("1. gamestart(3ë²ˆì„ ëˆ„ë¥´ì‹œì˜¤.)\n");
+		printf("2. exit(4ë²ˆì„ ëˆ„ë¥´ì‹œì˜¤.)\n");
 		scanf_s("%d", &input);
 
 		if (input == 3)
 		{
 			system("cls");
-			printf("°ÔÀÓÀÌ ½ÃÀÛµÇ¾ú½À´Ï´Ù.\n");
-			printf("¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.\n");
-			printf("1. °¡À§¹ÙÀ§º¸\n");
-			printf("2. ¹¬Âîºü\n");
-			printf("ÀÔ·Â : ");
+			printf("ê²Œì„ì´ ì‹œì‘ë˜ì—ˆìŠµë‹ˆë‹¤.\n");
+			printf("ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.\n");
+			printf("1. ê°€ìœ„ë°”ìœ„ë³´(5ë²ˆì„ ëˆ„ë¥´ì‹œì˜¤.)\n");
+			printf("2. ë¬µì°Œë¹ (6ë²ˆì„ ëˆ„ë¥´ì‹œì˜¤.)\n");
+			printf("ì…ë ¥ : ");
 			scanf_s("%d", &ingame);
 
-			if (ingame == 4)
+			if (ingame == 5)
 			{
 				system("cls");
-				printf("°¡À§¹ÙÀ§º¸ °ÔÀÓ¿¡ ¿À½Å °ÍÀ» È¯¿µÇÕ´Ï´Ù.\n");
-				printf("°¡À§¹ÙÀ§º¸ ÀÎ°øÁö´Éº¿À» ÀÌ°Üº¸¼¼¿ä.\n");
-				printf("´ç½ÅÀÌ ÀÌ±ä´Ù¸é ÀÌ °ÔÀÓ¿¡¼­ Å»ÃâÇÒ ¼ö ÀÖ½À´Ï´Ù.\n");
-				printf("°¡À§(0), ¹ÙÀ§(1), º¸(2) Áß¿¡ ÇÏ³ª¸¦ °í¸£¼¼¿ä.\n");
+				printf("ê°€ìœ„ë°”ìœ„ë³´ ê²Œì„ì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤.\n");
+				printf("ê°€ìœ„ë°”ìœ„ë³´ ì¸ê³µì§€ëŠ¥ë´‡ì„ ì´ê²¨ë³´ì„¸ìš”.\n");
+				printf("ë‹¹ì‹ ì´ ì´ê¸´ë‹¤ë©´ ì´ ê²Œì„ì—ì„œ íƒˆì¶œí•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.\n");
+				printf("ê°€ìœ„(0), ë°”ìœ„(1), ë³´(2) ì¤‘ì— í•˜ë‚˜ë¥¼ ê³ ë¥´ì„¸ìš”.\n");
 				scanf_s("%d", &a, &ingame);
 
 				srand(time(NULL));
 				b = rand() % 3;
 
-				printf("µµÀüÀÚ(³ª) %d\n", a);
-				printf("ÀÎ°øÁö´Éº¿ %d\n", b);
-				//µµÀüÀÚ(³ª)°¡ °¡À§(0)¸¦ ³½ °æ¿ì
-				if (a = 0, b = 0)
-					printf("¹«½ÂºÎ");
-				else if (a = 0, b = 1)
-					printf("ÀÎ°øÁö´Éº¿ÀÇ ½Â¸®");
-				else if (a = 0, b = 2)
-					printf("µµÀüÀÚ(³ª)ÀÇ ½Â¸®");
-				//µµÀüÀÚ(³ª)°¡ ¹ÙÀ§(1)¸¦ ³½ °æ¿ì
-				else if (a = 1, b == 1)
-					printf("¹«½ÂºÎ");
-				else if (a = 1, b == 2)
-					printf("ÀÎ°øÁö´Éº¿ÀÇ ½Â¸®");
-				else if (a = 1, b = 0)
-					printf("µµÀüÀÚ(³ª)ÀÇ ½Â¸®");
-				//µµÀüÀÚ(³ª)°¡ º¸(2)¸¦ ³½ °æ¿ì
-				else if (a = 2, b == 2)
-					printf("¹«½ÂºÎ");
-				else if (a = 2, b == 0)
-					printf("ÀÎ°øÁö´Éº¿ÀÇ ½Â¸®");
+				printf("ë„ì „ì(ë‚˜) %d\n", a);
+				printf("ì¸ê³µì§€ëŠ¥ë´‡ %d\n", b);
+				if (a == b)
+					printf("ë¬´ìŠ¹ë¶€ì…ë‹ˆë‹¤.");
+				else if (((a == 0) && (b == 2)) ||
+					((a == 1) && (b == 0)) ||
+					((a == 2) && (b == 1)))
+					printf("ìŠ¹ë¦¬í•˜ì˜€ìŠµë‹ˆë‹¤.");
 				else
-					printf("µµÀüÀÚ(³ª)ÀÇ ½Â¸®");
+					printf("íŒ¨ë°°í•˜ì˜€ìŠµë‹ˆë‹¤.");
+
+				break;
 			}
 		}
-			if (ingame == 2)
+			if (ingame == 6)
 			{
 				system("cls");
-				printf("¾ÆÁ÷ ÁØºñÁßÀÔ´Ï´Ù.");
+				printf("ì•„ì§ ì¤€ë¹„ì¤‘ì…ë‹ˆë‹¤.");
 				scanf("%d", &ingame);
 			}
 	}
-
 	return 0;
 }
